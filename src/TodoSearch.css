@@ -1,0 +1,34 @@
+.TodoSearch-container {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 6.3rem);
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  border: double 0.25rem transparent;
+  border-radius: 1rem;
+  background-image: linear-gradient(to left,#A3E4DB, #1c6dd0),
+    linear-gradient(to left, #165aad, #b61680);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.TodoSearch {
+  background-image: linear-gradient(to left, #acddd6, #2270cf);
+  border-radius: 1rem;
+  border: none;
+  margin: 0 2rem;
+  width: 100%;
+  height: 6.3rem;
+  font-size: 2.4rem;
+  text-align: center;
+  font-family: "Cascadia Code", sans-serif;
+  color: #0f0e0e;
+  outline: none;
+}
+
+.TodoSearch::placeholder {
+  color: #e4e3e3;
+  font-family: "Cascadia Code";
+  font-weight: 400;
+}
