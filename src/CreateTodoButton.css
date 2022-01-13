@@ -1,5 +1,5 @@
 .CreateTodoButton {
-  background: linear-gradient(#2f86a6, #34be82);
+  background: linear-gradient(to right, #2f86a6, blue);
   color: white;
   text-shadow: 0 0 1rem white, 0 0 3rem white, 0 0 2rem yellow;
   border: none;

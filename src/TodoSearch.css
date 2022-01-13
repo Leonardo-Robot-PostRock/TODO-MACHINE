@@ -7,14 +7,14 @@
   box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
   border: double 0.25rem transparent;
   border-radius: 1rem;
-  background-image: linear-gradient(to left,#A3E4DB, #1c6dd0),
+  background-image: linear-gradient(to left, white, white),
     linear-gradient(to left, #165aad, #b61680);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
 
 .TodoSearch {
-  background-image: linear-gradient(to left, #acddd6, #2270cf);
+  background-image: linear-gradient(to left, white, white);
   border-radius: 1rem;
   border: none;
   margin: 0 2rem;
@@ -28,7 +28,7 @@
 }
 
 .TodoSearch::placeholder {
-  color: #e4e3e3;
+  color: #b2b2b4;
   font-family: "Cascadia Code";
   font-weight: 400;
 }
