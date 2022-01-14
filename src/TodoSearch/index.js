@@ -1,15 +1,13 @@
 import React from "react";
 import './TodoSearch.css';
 
-function TodoSearch() {
-    const [searchValue, setSearchValue] = React.useState('');
-
+function TodoSearch({searchValue, setSearchValue}) {
     const onSearchValueChange = (event) => {
         console.log(event.target.value);
         setSearchValue(event.target.value);
     };
 
-    return [
+    return (
         <span className="TodoSearch-container">
             <input
                 className="TodoSearch"
@@ -17,10 +15,8 @@ function TodoSearch() {
                 value={searchValue}
                 onChange={onSearchValueChange}
             />
-        </span>,
-        <p>{searchValue}</p>
-
-    ];
+        </span>
+    );
 }
 
 export { TodoSearch };
