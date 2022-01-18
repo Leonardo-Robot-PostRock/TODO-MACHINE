@@ -8,7 +8,7 @@ import { AppUI } from "./AppUI";
 //   { text: 'Armar portafolio', completed: false },
 // ];
 
-function App() {
+function useLocalStorage(itemName) {
   const localStorageTodos = localStorage.getItem('TODOS_V1');
   let parsedTodos;
 
@@ -22,6 +22,18 @@ function App() {
   }
 
   const [todos, setTodos] = React.useState(parsedTodos);
+
+  //Persistencia
+  const saveTodos = (newTodos) => {
+    const stringifiedTodos = JSON.stringify(newTodos);
+    localStorage.setItem('TODOS_V1', stringifiedTodos);
+    setTodos(newTodos);
+  };
+}
+
+function App() {
+
+  const [todos, saveTodos] = useLocalStorage();
   const [searchValue, setSearchValue] = React.useState('');
   //
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -39,13 +51,8 @@ function App() {
     });
   }
 
-  //Persistencia
-  const saveTodos = (newTodos) => {
-    const stringifiedTodos = JSON.stringify(newTodos);
-    localStorage.setItem('TODOS_V1', stringifiedTodos);
-    setTodos(newTodos);
-  }
-  
+
+
   //completar todos
   const completeTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
