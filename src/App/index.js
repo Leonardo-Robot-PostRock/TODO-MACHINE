@@ -8,35 +8,46 @@ import { AppUI } from "./AppUI";
 //   { text: 'Armar portafolio', completed: false },
 // ];
 
-function useLocalStorage(itemName) {
-  const localStorageTodos = localStorage.getItem('TODOS_V1');
-  let parsedTodos;
+//Custom Hook
+function useLocalStorage(itemName, initialValue) {
+  React.useEffect(()=>{setTimeout(()=>{
+
+  }, 10000)
+});
+  const localStorageItem = localStorage.getItem('itemName');
+  let pasedItem;
 
   //si localStorage está vacío
-  if (!localStorageTodos) {
-    localStorage.setItem('TODOS_V1', JSON.stringify([]));
-    parsedTodos = [];
+  if (!localStorageItem) {
+    localStorage.setItem('itemName', JSON.stringify(initialValue));
+    pasedItem = initialValue;
   } else {
     //Si hay algo en algún todo o localStorage, convertir a un objeto de js
-    parsedTodos = JSON.parse(localStorageTodos);
+    pasedItem = JSON.parse(localStorageItem);
   }
 
-  const [todos, setTodos] = React.useState(parsedTodos);
+  const [item, setItem] = React.useState(pasedItem);
 
   //Persistencia
-  const saveTodos = (newTodos) => {
-    const stringifiedTodos = JSON.stringify(newTodos);
-    localStorage.setItem('TODOS_V1', stringifiedTodos);
-    setTodos(newTodos);
+  const saveItem = (newItem) => {
+    const stringifiedItem = JSON.stringify(newItem);
+    localStorage.setItem('itemName', stringifiedItem);
+    setItem(newItem);
   };
+
+  return [
+    item,
+    saveItem,
+  ]
 }
 
-function App() {
-
-  const [todos, saveTodos] = useLocalStorage();
+function App(itemName) {
+  //Array: 1ra posición: estado y 2da posición: forma de actualizar ese estado
+  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
-  //
+  //Filtrar todos que tengan el atributo completed como true
   const completedTodos = todos.filter(todo => !!todo.completed).length;
+  //cantidad de todos
   const totalTodos = todos.length;
 
   let searchedTodos = [];
@@ -68,6 +79,12 @@ function App() {
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
   }
+  // console.log('Render (antes del use effect)');
+  // //Se renderiza cada vez que cambia la cantidad de todos
+  // React.useEffect(() => {
+  //   console.log('use effect')
+  // }, [totalTodos]);
+  // console.log('Render (luego del use effect)');
 
   return (
     <AppUI

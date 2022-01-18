@@ -5,8 +5,10 @@ import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
 
-
+//props
 function AppUI({
+  loading,
+  error,
   totalTodos,
   completedTodos,
   searchValue,
@@ -26,6 +28,11 @@ function AppUI({
         setSearchValue={setSearchValue}
       />
       <TodoList>
+        {error && <p>Hubo un error</p>}
+        {loading && <p>Estamos cargargando</p>}
+        {(!loading && !searchedTodos.length) && <p>Crea tu primer todo</p>}
+
+
         {searchedTodos.map((todo) => (
           <TodoItem
             key={todo.text}
@@ -37,7 +44,8 @@ function AppUI({
         ))}
       </TodoList>
       <CreateTodoButton />
-    </React.Fragment>);
+    </React.Fragment>
+  );
 }
 
 export { AppUI };
