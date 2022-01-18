@@ -1,15 +1,27 @@
 import React from "react";
 import { AppUI } from "./AppUI";
 
-const defaultTodos = [
-  { text: 'Estudiar', completed: true },
-  { text: 'Tomar el curso de intro de react', completed: false },
-  { text: 'Buscar herramientas para FrontEnd', completed: false },
-  { text: 'Armar portafolio', completed: false },
-];
+// const defaultTodos = [
+//   { text: 'Estudiar', completed: true },
+//   { text: 'Tomar el curso de intro de react', completed: false },
+//   { text: 'Buscar herramientas para FrontEnd', completed: false },
+//   { text: 'Armar portafolio', completed: false },
+// ];
 
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const localStorageTodos = localStorage.getItem('TODOS_V1');
+  let parsedTodos;
+
+  //si localStorage está vacío
+  if (!localStorageTodos) {
+    localStorage.setItem('TODOS_V1', JSON.stringify([]));
+    parsedTodos = [];
+  } else {
+    //Si hay algo en algún todo o localStorage, convertir a un objeto de js
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
+  const [todos, setTodos] = React.useState(parsedTodos);
   const [searchValue, setSearchValue] = React.useState('');
   //
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -27,20 +39,27 @@ function App() {
     });
   }
 
+  //Persistencia
+  const saveTodos = (newTodos) => {
+    const stringifiedTodos = JSON.stringify(newTodos);
+    localStorage.setItem('TODOS_V1', stringifiedTodos);
+    setTodos(newTodos);
+  }
+  
   //completar todos
-
   const completeTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
 
+  //eliminar todos
   const deleteTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
 
   return (
