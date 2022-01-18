@@ -28,9 +28,9 @@ function AppUI({
         setSearchValue={setSearchValue}
       />
       <TodoList>
-        {error && <p>Hubo un error</p>}
-        {loading && <p>Estamos cargargando</p>}
-        {(!loading && !searchedTodos.length) && <p>Crea tu primer todo</p>}
+        {error && <p>Hubo un error :|</p>}
+        {loading && <p>Estamos cargargando, por favor espera</p>}
+        {(!loading && !searchedTodos.length) && <p>¡Crea tu primer TODO!</p>}
 
 
         {searchedTodos.map((todo) => (
