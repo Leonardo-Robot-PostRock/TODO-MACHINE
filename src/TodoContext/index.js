@@ -44,8 +44,8 @@ function TodoProvider(props) {
         newTodos.splice(todoIndex, 1);
         saveTodos(newTodos);
     }
+    //propiedades a TodoContext.Provider
     return (
-        //propiedades a TodoContext.Provider
         <TodoContext.Provider value={{
             loading,
             error,
