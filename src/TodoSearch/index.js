@@ -3,13 +3,12 @@ import { TodoContext } from "../TodoContext";
 import './TodoSearch.css';
 
 function TodoSearch() {
+    //Use Context
     const { searchValue, setSearchValue } = React.useContext(TodoContext);
-
     const onSearchValueChange = (event) => {
         console.log(event.target.value);
         setSearchValue(event.target.value);
     };
-
     return (
         <span className="TodoSearch-container">
             <input

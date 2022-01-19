@@ -12,6 +12,8 @@ function TodoProvider(props) {
         error,
     } = useLocalStorage('TODOS_V1', []);
     const [searchValue, setSearchValue] = React.useState('');
+    const [openModal, setOpenModal] = React.useState(false);
+
     //Filtrar todos que tengan el atributo completed como true
     const completedTodos = todos.filter(todo => !!todo.completed).length;
     //cantidad de todos
@@ -30,10 +32,10 @@ function TodoProvider(props) {
     }
 
     //completar todos
-    const completeTodo = (text) => {
+    const toggleCompleteTodo = (text) => {
         const todoIndex = todos.findIndex(todo => todo.text === text);
         const newTodos = [...todos];
-        newTodos[todoIndex].completed = true;
+        newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
         saveTodos(newTodos);
     };
 
@@ -54,8 +56,10 @@ function TodoProvider(props) {
             searchValue,
             setSearchValue,
             searchedTodos,
-            completeTodo,
+            toggleCompleteTodo,
             deleteTodo,
+            openModal,
+            setOpenModal,
         }}>
             {props.children}
         </TodoContext.Provider >

@@ -1,5 +1,5 @@
 .CreateTodoButton {
-  background: linear-gradient(to right, #2f86a6, blue);
+  background: linear-gradient(to right, #2f86a6, rgb(52, 145, 161));
   color: white;
   text-shadow: 0 0 1rem white, 0 0 3rem white, 0 0 2rem yellow;
   border: none;
@@ -15,6 +15,8 @@
   align-items: center;
   width: 6rem;
   height: 6rem;
+  
+  z-index: 1;
 
   transform: rotate(0);
   transition: 0.3s case;
