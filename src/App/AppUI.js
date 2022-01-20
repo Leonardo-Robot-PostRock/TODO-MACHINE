@@ -6,8 +6,9 @@ import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
+import { TodoForm } from '../TodoForm';
 
-
+ 
 //props
 function AppUI() {
   const {
@@ -28,9 +29,9 @@ function AppUI() {
         {error && <p>Hubo un error :|</p>}
         {loading && <p>Estamos cargargando, por favor espera</p>}
         {(!loading && !searchedTodos.length) && <p>¡Crea tu primer TODO!</p>}
-        {searchedTodos.map((todo) => (
+        {searchedTodos.map((todo, index) => (
           <TodoItem
-            key={todo.text}
+            key={index}
             text={todo.text}
             completed={todo.completed}
             onComplete={() => toggleCompleteTodo(todo.text)}
@@ -39,18 +40,14 @@ function AppUI() {
         ))}
       </TodoList>
 
-
       {!!openModal && (
         <Modal>
-          <p>
-            {searchedTodos[0]?.text}
-          </p>
+            <TodoForm></TodoForm>  
         </Modal>
       )}
 
       <CreateTodoButton
         setOpenModal={setOpenModal}
-        openModal={openModal}
       />
     </React.Fragment>
   );
