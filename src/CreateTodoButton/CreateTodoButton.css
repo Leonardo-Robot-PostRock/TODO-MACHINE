@@ -1,11 +1,11 @@
 .CreateTodoButton {
-  background: linear-gradient(to right, #2f86a6, rgb(52, 145, 161));
+  background: linear-gradient(to right, #3fd4d4, rgb(47, 186, 204));
   color: white;
   text-shadow: 0 0 1rem white, 0 0 3rem white, 0 0 2rem yellow;
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 5rem;
+  font-size: 3rem;
   position: fixed;
   bottom: 2.4rem;
   right: 2.4rem;
@@ -19,7 +19,7 @@
   z-index: 1;
 
   transform: rotate(0);
-  transition: 0.3s case;
+  transition: .3s ease;
 }
 
 .CreateTodoButton:hover {

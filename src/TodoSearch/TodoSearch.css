@@ -3,7 +3,7 @@
   margin: auto;
   align-items: center;
   justify-content: center;
-  width: calc(100% - 6.3rem);
+  width: 70%;
   box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
   border: double 0.25rem transparent;
   border-radius: 1rem;
