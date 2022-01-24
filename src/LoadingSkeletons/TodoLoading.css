@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 2.4rem;
+  width: 100%;
   height: 4.8rem;
   box-shadow: 0 0.5rem 5rem rgba(32, 35, 41, 0.15);
   border-radius: 1rem;
@@ -11,28 +12,28 @@
 }
 
 .LoadingTodo-text {
-  margin: 1rem;
+  padding: 1rem;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 2.4rem;
-  font-weight: 400;
+  font-weight: lighter;
 }
 
 .Loading-completeIcon,
 .LoadingTodo-deleteIcon {
   border-radius: 5rem;
-  height: 2rem;
-  width: 2rem;
+  height: 1.4rem;
+  width: 1.4rem;
 }
 
 .Loading-completeIcon {
   position: absolute;
-  left: 1.2rem;
+  left: 0.5rem;
 }
 
 .LoadingTodo-deleteIcon {
   position: absolute;
-  right: 1.2rem;
+  right: 0.5rem;
 }
 
 .LoadingTodo-container,
