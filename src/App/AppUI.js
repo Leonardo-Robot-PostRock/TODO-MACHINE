@@ -36,8 +36,8 @@ function AppUI() {
             key={index}
             text={todo.text}
             completed={todo.completed}
-            onComplete={() => toggleCompleteTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
+            onComplete={() => toggleCompleteTodo(index)}
+            onDelete={() => deleteTodo(index)}
           />
         ))}
       </TodoList>

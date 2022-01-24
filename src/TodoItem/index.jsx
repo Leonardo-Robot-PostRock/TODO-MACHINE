@@ -10,7 +10,7 @@ function TodoItem(props) {
       <p className={`TodoItem-p ${props.completed && "TodoItem-p-completed"}`}>
         {props.text}
       </p>
-      <DeleteIcon onDelete={props.onDelete} />
+      <DeleteIcon id={`item-${props.index}`} onDelete={props.onDelete} />
     </li>
   );
 }

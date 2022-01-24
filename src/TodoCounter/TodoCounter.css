@@ -1,5 +1,7 @@
 .TodoCounter {
-    font-size: 2.4rem;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
     text-align: center;
     margin: 0;
     padding: 4.8rem;

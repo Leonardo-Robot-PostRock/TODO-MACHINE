@@ -8,7 +8,6 @@ function useLocalStorage(itemName, initialValue) {
   const [loading, setLoading] = React.useState(true);
   //Estado inicial vacio, de la información que ingresa el usuario. 
   const [item, setItem] = React.useState(initialValue);
-
   React.useEffect(() => {
     setTimeout(() => {
       try {

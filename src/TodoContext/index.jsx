@@ -43,18 +43,16 @@ function TodoProvider(props) {
     };
 
     //completar todos
-    const toggleCompleteTodo = (text) => {
-        const todoIndex = todos.findIndex(todo => todo.text === text);
+    const toggleCompleteTodo = (index) => {
         const newTodos = [...todos];
-        newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+        newTodos[index].completed = !newTodos[index].completed;
         saveTodos(newTodos);
     };
 
     //eliminar todos
-    const deleteTodo = (text) => {
-        const todoIndex = todos.findIndex(todo => todo.text === text);
+    const deleteTodo = (index) => {
         const newTodos = [...todos];
-        newTodos.splice(todoIndex, 1);
+        newTodos.splice(index, 1);
         saveTodos(newTodos);
     }
     //propiedades a TodoContext.Provider
