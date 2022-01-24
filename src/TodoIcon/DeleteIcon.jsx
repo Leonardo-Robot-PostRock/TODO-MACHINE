@@ -3,7 +3,8 @@ import { TodoIcon } from "./TodoIcon";
 
 function DeleteIcon({ onDelete }) {
     return (
-        <TodoIcon className="delete"
+        <TodoIcon 
+            className="delete"
             type="delete"
             onClick={onDelete}
         />

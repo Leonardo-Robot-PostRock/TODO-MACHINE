@@ -4,14 +4,14 @@ form {
   background-color: #fff;
   padding: 3.3rem 4rem;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
 label {
   text-align: center;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.4rem;
   color: #1e1e1f;
   margin-bottom: 2.6rem;
 }
@@ -21,8 +21,8 @@ textarea {
   border: 0.2rem solid #202329;
   border-radius: 0.2rem;
   box-shadow: 0 0.5rem 5rem rgba(32, 35, 41, 0.25);
-  color: 1e1e1f;
-  font-size: 2rem;
+  color: #1e1e1f;
+  font-size: 1.6rem;
   text-align: center;
   padding: 1.2rem;
   height: 9.6rem;
@@ -33,6 +33,7 @@ textarea::placeholder {
   color: #a5a5a5;
   font-family: Cascadia Code;
   font-weight: 400;
+  display: flex;
 }
 
 textarea:focus {
@@ -50,7 +51,7 @@ textarea:focus {
 .TodoForm-button {
   cursor: pointer;
   display: inline-block;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #202329;
   font-weight: 400;
   width: 12rem;
@@ -63,9 +64,22 @@ textarea:focus {
 .TodoForm-button--add {
   background: #61dafa;
   box-shadow: 0 0.5rem 2.5rem rgba(97, 218, 250, 0.5);
+  margin-left: 1rem;
+}
+
+.TodoForm-button--add:active {
+  background: rgb(36, 190, 36);
 }
 
 .TodoForm-button--cancel {
-    background: transparent;
+  background: transparent;
+  margin-right: 1rem;
 }
 
+.TodoForm-button--cancel:active {
+  color: red;
+}
+
+.TodoForm-button--cancel:hover {
+  color: red;
+}

@@ -7,14 +7,13 @@
   cursor: pointer;
   font-size: 3rem;
   position: fixed;
-  bottom: 2.4rem;
-  right: 2.4rem;
+  bottom: 1rem;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   
   z-index: 1;
 
