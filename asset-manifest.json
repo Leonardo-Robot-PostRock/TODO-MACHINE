@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/TODO-MACHINE/static/css/main.f182d573.chunk.css",
+    "main.css": "/TODO-MACHINE/static/css/main.05baac67.chunk.css",
     "main.js": "/TODO-MACHINE/static/js/main.3178432b.chunk.js",
     "main.js.map": "/TODO-MACHINE/static/js/main.3178432b.chunk.js.map",
     "runtime~main.js": "/TODO-MACHINE/static/js/runtime~main.9d260e99.js",
@@ -8,9 +8,9 @@
     "static/js/2.90272c86.chunk.js": "/TODO-MACHINE/static/js/2.90272c86.chunk.js",
     "static/js/2.90272c86.chunk.js.map": "/TODO-MACHINE/static/js/2.90272c86.chunk.js.map",
     "index.html": "/TODO-MACHINE/index.html",
-    "precache-manifest.2d025b1ec91329bada74d0f0b0edf2f5.js": "/TODO-MACHINE/precache-manifest.2d025b1ec91329bada74d0f0b0edf2f5.js",
+    "precache-manifest.ede4184f42b2c8d7998df854baf4f964.js": "/TODO-MACHINE/precache-manifest.ede4184f42b2c8d7998df854baf4f964.js",
     "service-worker.js": "/TODO-MACHINE/service-worker.js",
-    "static/css/main.f182d573.chunk.css.map": "/TODO-MACHINE/static/css/main.f182d573.chunk.css.map",
+    "static/css/main.05baac67.chunk.css.map": "/TODO-MACHINE/static/css/main.05baac67.chunk.css.map",
     "static/media/confirmar.dcd86218.svg": "/TODO-MACHINE/static/media/confirmar.dcd86218.svg",
     "static/media/eliminar.1d10709d.svg": "/TODO-MACHINE/static/media/eliminar.1d10709d.svg"
   }
