@@ -4,6 +4,7 @@ import { useLocalStorage } from "./useLocalStorage";
 const TodoContext = React.createContext()
 
 //TodoContext lleva sus dos propiedades(props): Provider(El contenedor que va a envolver a todos los componentes de la aplicación) y  Consumer; el cual cada componente va a poder consumir. Ambos son del método createContext.
+//Aunque en el proyecto se ha usado únicamente useContext y no consumer
 function TodoProvider(props) {
     //Array: 1ra posición: estado y 2da posición: forma de actualizar ese estado. Nuevo; 3ra posición estado de carga. Aparte, hay cambio de nombres de 2 estados.
     const { item: todos,

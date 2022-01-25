@@ -11,11 +11,11 @@ function useLocalStorage(itemName, initialValue) {
   React.useEffect(() => {
     setTimeout(() => {
       try {
-        const localStorageItem = localStorage.getItem('itemName');
+        const localStorageItem = localStorage.getItem(itemName);
         let parsedItem;
         //si localStorage está vacío
         if (!localStorageItem) {
-          localStorage.setItem('itemName', JSON.stringify(initialValue));
+          localStorage.setItem(itemName, JSON.stringify(initialValue));
           parsedItem = initialValue;
         } else {
           //Si hay algo en algún todo o localStorage, convertir a un objeto de js
@@ -35,7 +35,7 @@ function useLocalStorage(itemName, initialValue) {
   const saveItem = (newItem) => {
     try {
       const stringifiedItem = JSON.stringify(newItem);
-      localStorage.setItem('itemName', stringifiedItem);
+      localStorage.setItem(itemName, stringifiedItem);
       setItem(newItem);
     } catch {
       setError(Error);
